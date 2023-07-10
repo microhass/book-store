@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Header from './styles/styledHeader';
 
 const Layout = () => (
   <>
-    <header>
-      <h1>Book Store</h1>
+    <Header>
+      <h1>Bookstore CMS</h1>
       <nav>
         <ul>
           <li>
-            <Link to={'/'}>Home</Link>
+            <Link to={'/'}>books</Link>
           </li>
           <li>
-            <Link to={'/category'}>Category</Link>
+            <Link to={'/category'}>categories</Link>
           </li>
         </ul>
       </nav>
-    </header>
+    </Header>
     <Outlet />
   </>
 );

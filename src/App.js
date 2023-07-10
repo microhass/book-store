@@ -5,6 +5,8 @@ import Layout from './components/Layout';
 import Error from './components/Error';
 import BooksCategory from './components/BooksCategory';
 
+import './App.css';
+
 const App = () => (
   <BrowserRouter>
     <Routes>
