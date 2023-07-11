@@ -7,32 +7,33 @@ const CreateBook = () => {
 
   const bookSubmitHandler = (e) => {
     e.preventDefault();
-    const bookTitle = titleRef.current.value;
-    const bookAuthor = authorRef.current.value;
+    // const bookTitle = titleRef.current.value;
+    // const bookAuthor = authorRef.current.value;
 
-    if (bookTitle.trim() === '' || bookAuthor.trim() === '') return;
-    console.log('success');
+    // if (bookTitle.trim() === '' || bookAuthor.trim() === '') return;
   };
 
   return (
     <BookForm onSubmit={bookSubmitHandler}>
       <h3>add a new book</h3>
 
-      <input
-        type='text'
-        name='title'
-        id='title'
-        placeholder='Book Title'
-        ref={titleRef}
-      />
-      <input
-        type='text'
-        name='author'
-        id='author'
-        placeholder='Book Author'
-        ref={authorRef}
-      />
-      <button type='submit'>add book</button>
+      <div>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Book Title"
+          ref={titleRef}
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Book Author"
+          ref={authorRef}
+        />
+        <button type="submit">add book</button>
+      </div>
     </BookForm>
   );
 };

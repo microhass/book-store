@@ -1,7 +1,5 @@
 import React from 'react';
 
-const BooksCategory = () => {
-  return <div>BooksCategory</div>;
-};
+const BooksCategory = () => <div />;
 
 export default BooksCategory;
