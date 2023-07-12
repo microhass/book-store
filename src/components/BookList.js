@@ -3,11 +3,31 @@ import BookListDiv from './styles/styledBookList';
 import Book from './Book';
 
 const BookList = () => {
-  const books = [1, 2, 3].map((i) => <Book key={i} />);
+  const books = [
+    {
+      id: 1,
+      title: 'the last black unicorn',
+      author: 'tiffany hadish',
+      chapter: 1,
+    },
+    {
+      id: 2,
+      title: 'shutter me',
+      author: 'tahereh mafi',
+      chapter: 3,
+    },
+  ];
 
   return (
     <BookListDiv>
-      {books}
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          chapter={book.chapter}
+        />
+      ))}
     </BookListDiv>
   );
 };

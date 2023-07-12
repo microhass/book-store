@@ -7,10 +7,6 @@ const CreateBook = () => {
 
   const bookSubmitHandler = (e) => {
     e.preventDefault();
-    // const bookTitle = titleRef.current.value;
-    // const bookAuthor = authorRef.current.value;
-
-    // if (bookTitle.trim() === '' || bookAuthor.trim() === '') return;
   };
 
   return (

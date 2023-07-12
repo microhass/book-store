@@ -25,3 +25,7 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+img {
+  width: 2rem;
+}

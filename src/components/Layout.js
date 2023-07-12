@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Header from './styles/styledHeader';
+import userImage from '../images/user.png';
 
 const Layout = () => (
   <>
@@ -18,7 +19,9 @@ const Layout = () => (
           </ul>
         </nav>
       </div>
-      <div className="profile">profile</div>
+      <div className="profile">
+        <img src={userImage} alt="User Profile" />
+      </div>
     </Header>
     <Outlet />
   </>

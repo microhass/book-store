@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BookDiv from './styles/styledBook';
+import BookChapters from './BookChapters';
 
-const Book = () => (
+const Book = ({ title, author, chapter }) => (
   <BookDiv>
     <div className="details">
-      <h3 className="title">the hunger games</h3>
-      <p className="author">Yuqee chen</p>
+      <h3 className="title">{title}</h3>
+      <p className="author">{author}</p>
 
       <div className="book-actions actions">
         <button type="button">comments</button>
@@ -13,15 +15,20 @@ const Book = () => (
         <button type="button">Edit</button>
       </div>
     </div>
-    <div className="chapters">
-      <p className="current-chapter">current chapter</p>
-      <h6 className="chapter">Chapter 10</h6>
-
-      <div className="chapter-actions actions">
-        <button type="button">update progress</button>
-      </div>
-    </div>
+    <BookChapters chapter={chapter} />
   </BookDiv>
 );
+
+Book.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  chapter: PropTypes.number,
+};
+
+Book.defaultProps = {
+  title: 'book 1',
+  author: 'jane doe',
+  chapter: 1,
+};
 
 export default Book;

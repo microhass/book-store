@@ -11,8 +11,9 @@ const BookDiv = styled.div`
   border: 1px solid #daeaea;
 
   .details {
+    text-transform: capitalize;
+    
     .title {
-      text-transform: capitalize;
       font-size: large;
     }
 
