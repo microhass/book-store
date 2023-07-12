@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Todo List Project](#-todo-list-project)
+- [📖 Bookstore Project](#-bookstore-project)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -19,9 +19,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Todo List Project<a name="about-project"></a>
+# 📖 Bookstore Project<a name="about-project"></a>
 
-**A simple JavaScript application to create, manage & organize tasks as a todo list. It is implemented with the help of `webpack` and other libraries.**
+**A React version of the microverse Awesome books project.**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -30,9 +30,9 @@
 > This project was built using the following technologies:
 
 <details>
-  <summary>HTML</summary>
+  <summary>React</summary>
   <ul>
-    <li><a href="https://www.w3schools.com/html/" target="_blank">HTML</a></li>
+    <li><a href="https://www.w3schools.com/react/" target="_blank">React</a></li>
   </ul>
 </details>
 
@@ -54,9 +54,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Add new tasks: Enter the new task to be added to the list.**
-- **Mark tasks completed: Mark a task as completed when done.**
-- **Drag & drop functionality to organize tasks.**
+- **Add new book: Enter the new book to be added to the list.**
+- **Mark book completed: Mark a task as completed when done or delete id.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,13 +78,13 @@ To get get a local copy up and running, you can follow these simple steps:
 Clone the repository to your local machine using the following command:
 
 ```sh
-  git clone https://github.com/microhass/math-magicians.git
+  git clone https://github.com/microhass/book-store.git
 ```
 
 Navigate to the project directory:
 
 ```sh
- cd math-magicians
+ cd book-store
 ```
 
 Install the necessary dependencies by running:
@@ -102,7 +101,7 @@ Start the local dev server using the command:
 
 The website will be live at `localhost:3000/`. You can now make changes to the project as desired and push them back to the repository using Git.
 
-That's it! With these simple steps, you should be able to get up and running with the Math Magicians project in no time. Happy coding!
+That's it! With these simple steps, you should be able to get up and running with the Bookstore project in no time. Happy coding!
 
 <!-- ### Run tests
 
@@ -138,7 +137,7 @@ Example command:
 
 <!-- > Describe 1 - 3 features you will add to the project. -->
 
-- [ ] **Full calculator functionality.**
+- [ ] **The categories page.**
 - [ ] **Responsive design: The project will be optimized to display properly on different screen sizes, including desktops, tablets, and mobile devices.**
 - [ ] **JavaScript interactivity: Some interactive features will be added using JavaScript to enhance the user experience.**
 

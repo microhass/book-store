@@ -10,11 +10,11 @@ import './App.css';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route index path='home' element={<Home />} />
-        <Route index path='/category' element={<BooksCategory />} />
-        <Route path='*' element={<Error />} />
+        <Route index path="/books" element={<Home />} />
+        <Route index path="/category" element={<BooksCategory />} />
+        <Route path="*" element={<Error />} />
       </Route>
     </Routes>
   </BrowserRouter>

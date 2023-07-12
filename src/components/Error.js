@@ -1,5 +1,6 @@
 import React from 'react';
+import ErrorDiv from './styles/styledError';
 
-const Error = () => <section>Error. Page Not Found!</section>;
+const Error = () => <ErrorDiv>Page Not Found!</ErrorDiv>;
 
 export default Error;
