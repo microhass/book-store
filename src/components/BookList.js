@@ -1,28 +1,15 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
 import BookListDiv from './styles/styledBookList';
 import Book from './Book';
 
 const BookList = () => {
-  const books = [
-    {
-      id: 1,
-      title: 'the last black unicorn',
-      author: 'tiffany hadish',
-      chapter: 1,
-    },
-    {
-      id: 2,
-      title: 'shutter me',
-      author: 'tahereh mafi',
-      chapter: 3,
-    },
-  ];
+  const { books } = useSelector((state) => state.books);
 
   return (
     <BookListDiv>
       {books.map((book) => (
         <Book
-          key={book.id}
+          key={book.item_id}
           title={book.title}
           author={book.author}
           chapter={book.chapter}
