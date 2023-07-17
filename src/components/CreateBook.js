@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import BookForm from './styles/styledForm';
 import { useDispatch } from 'react-redux';
+import BookForm from './styles/styledForm';
 import { bookActions } from '../redux/books/booksSlice';
 
 const CreateBook = () => {
@@ -33,20 +33,20 @@ const CreateBook = () => {
 
       <div>
         <input
-          type='text'
-          name='title'
-          id='title'
-          placeholder='Book Title'
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Book Title"
           ref={titleRef}
         />
         <input
-          type='text'
-          name='author'
-          id='author'
-          placeholder='Book Author'
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Book Author"
           ref={authorRef}
         />
-        <button type='submit'>add book</button>
+        <button type="submit">add book</button>
       </div>
     </BookForm>
   );
