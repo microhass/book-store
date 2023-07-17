@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import BookForm from './styles/styledForm';
-import { bookActions } from '../redux/books/booksSlice';
+import {
+  fetchAPIBooks,
+} from '../redux/books/booksSlice';
 
 const CreateBook = () => {
   const titleRef = useRef();
@@ -22,7 +24,7 @@ const CreateBook = () => {
       category: 'fiction',
     };
 
-    dispatch(bookActions.createBook(newBook));
+    dispatch(fetchAPIBooks({ method: 'post', newBook }));
     titleRef.current.value = '';
     authorRef.current.value = '';
   };

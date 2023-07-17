@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import BookDiv from './styles/styledBook';
 import BookChapters from './BookChapters';
-import { bookActions } from '../redux/books/booksSlice';
+import {
+  fetchAPIBooks,
+} from '../redux/books/booksSlice';
 
 const Book = ({
-  title, author, chapter, itemId,
+  title, author, chapter, bookId,
 }) => {
   const dispatch = useDispatch();
+
   const removeBookHandler = () => {
-    dispatch(bookActions.deleteBook({ bookId: itemId }));
+    dispatch(fetchAPIBooks({ method: 'delete', bookId }));
   };
 
   return (
@@ -36,14 +39,14 @@ Book.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   chapter: PropTypes.number,
-  itemId: PropTypes.string,
+  bookId: PropTypes.string,
 };
 
 Book.defaultProps = {
   title: 'book 1',
   author: 'jane doe',
   chapter: 1,
-  itemId: '',
+  bookId: '',
 };
 
 export default Book;
