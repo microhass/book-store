@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BookForm from './styles/styledForm';
-import {
-  fetchAPIBooks,
-} from '../redux/books/booksSlice';
+import { fetchAPIBooks } from '../redux/books/booksSlice';
 
 const CreateBook = () => {
   const titleRef = useRef();
   const authorRef = useRef();
   const dispatch = useDispatch();
+
+  const { isLoading } = useSelector((state) => state.books);
 
   const bookSubmitHandler = (e) => {
     e.preventDefault();
@@ -48,7 +48,9 @@ const CreateBook = () => {
           placeholder="Book Author"
           ref={authorRef}
         />
-        <button type="submit">add book</button>
+        <button type="submit" className={isLoading ? 'loading' : ''}>
+          add book
+        </button>
       </div>
     </BookForm>
   );

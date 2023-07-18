@@ -29,3 +29,8 @@ button {
 img {
   width: 2rem;
 }
+
+button.loading {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

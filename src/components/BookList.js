@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BookListDiv from './styles/styledBookList';
 import Book from './Book';
@@ -5,7 +6,11 @@ import { fetchAPIBooks } from '../redux/books/booksSlice';
 
 const BookList = () => {
   const dispatch = useDispatch();
-  dispatch(fetchAPIBooks({ method: 'get' }));
+
+  useEffect(() => {
+    dispatch(fetchAPIBooks({ method: 'get' }));
+  }, [dispatch]);
+
   const { books } = useSelector((state) => state.books);
 
   return (

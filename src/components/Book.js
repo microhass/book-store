@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BookDiv from './styles/styledBook';
 import BookChapters from './BookChapters';
 import {
@@ -11,6 +11,7 @@ const Book = ({
   title, author, chapter, bookId,
 }) => {
   const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.books);
 
   const removeBookHandler = () => {
     dispatch(fetchAPIBooks({ method: 'delete', bookId }));
@@ -24,7 +25,11 @@ const Book = ({
 
         <div className="book-actions actions">
           <button type="button">comments</button>
-          <button type="button" onClick={removeBookHandler}>
+          <button
+            type="button"
+            onClick={removeBookHandler}
+            className={isLoading ? 'loading' : ''}
+          >
             remove
           </button>
           <button type="button">Edit</button>
