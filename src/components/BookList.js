@@ -1,8 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BookListDiv from './styles/styledBookList';
 import Book from './Book';
+import { fetchAPIBooks } from '../redux/books/booksSlice';
 
 const BookList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAPIBooks({ method: 'get' }));
+  }, [dispatch]);
+
   const { books } = useSelector((state) => state.books);
 
   return (
@@ -10,7 +18,7 @@ const BookList = () => {
       {books.map((book) => (
         <Book
           key={book.item_id}
-          itemId={book.item_id}
+          bookId={book.item_id}
           title={book.title}
           author={book.author}
           chapter={book.chapter}

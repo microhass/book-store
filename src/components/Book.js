@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BookDiv from './styles/styledBook';
 import BookChapters from './BookChapters';
-import { bookActions } from '../redux/books/booksSlice';
+import {
+  fetchAPIBooks,
+} from '../redux/books/booksSlice';
 
 const Book = ({
-  title, author, chapter, itemId,
+  title, author, chapter, bookId,
 }) => {
   const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.books);
+
   const removeBookHandler = () => {
-    dispatch(bookActions.deleteBook({ bookId: itemId }));
+    dispatch(fetchAPIBooks({ method: 'delete', bookId }));
   };
 
   return (
@@ -21,7 +25,11 @@ const Book = ({
 
         <div className="book-actions actions">
           <button type="button">comments</button>
-          <button type="button" onClick={removeBookHandler}>
+          <button
+            type="button"
+            onClick={removeBookHandler}
+            className={isLoading ? 'loading' : ''}
+          >
             remove
           </button>
           <button type="button">Edit</button>
@@ -36,14 +44,14 @@ Book.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   chapter: PropTypes.number,
-  itemId: PropTypes.string,
+  bookId: PropTypes.string,
 };
 
 Book.defaultProps = {
   title: 'book 1',
   author: 'jane doe',
   chapter: 1,
-  itemId: '',
+  bookId: '',
 };
 
 export default Book;
